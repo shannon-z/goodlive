@@ -8,11 +8,13 @@ import Layout from '../pages/Main/Layout'
 import BottomNav from '../components/BottomNav'
 import City from '../pages/City'
 import Search from '../pages/Search'
+import Details from '../pages/Details'
 const AppRouter = () => {
     return (
         <Router>
             <Switch>
                 <Route path="/city" component={City}></Route>
+                <Route path="/details/:id" component={Details}></Route>
                 <Route path="/search/:keywords" component={Search}></Route>
                 <Layout>
                     <Switch>

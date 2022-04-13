@@ -4,7 +4,8 @@ const base={
     cityUrl:"/api/aj/getcitycode",
     homehot1:"/api/home/hot1",
     homehot2:"/api/home/hot2",
-    searchUrl:"/api/search"
+    searchUrl:"/api/search",
+    details:"/api/details"
 }
 const api={
     // 获取首页热门产品1
@@ -27,8 +28,12 @@ const api={
         return axios.get(base.baseUrl+base.searchUrl,{
             params
         })
+    },
+    details(params){
+        return axios.get(base.baseUrl+base.details,{
+            params
+        })
     }
-    
 }
 
 export default api;
