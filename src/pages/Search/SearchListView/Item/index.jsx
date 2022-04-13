@@ -1,8 +1,10 @@
 import React from 'react'
 import "./style.less"
+import { Link } from 'react-router-dom'
 const Item = (props) => {
   return (
     <div className='list-item'>
+      <Link to={`/details/${props.data.id}`}>
         <img src={props.data.img} alt='' />
         <div className='mask'>
           <div className='left'>
@@ -13,10 +15,11 @@ const Item = (props) => {
             <div className='btn'>
               {props.data.rentType}
             </div>
-            <p dangerouslySetInnerHTML={{__html:props.data.price+"元/月"}}></p>
+            <p dangerouslySetInnerHTML={{ __html: props.data.price + "元/月" }}></p>
           </div>
         </div>
-      </div>
+      </Link>
+    </div>
   )
 }
 

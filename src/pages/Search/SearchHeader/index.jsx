@@ -1,6 +1,7 @@
 import React from 'react'
 import SearchInput from '../../../components/SearchInput'
 import "./style.less"
+
 const SearchHeader = () => {
   function backHandle(){
     window.history.back()
@@ -12,7 +13,7 @@ const SearchHeader = () => {
       </span>
       <div className='input-container'>
         <i className='icon-search'></i>
-        <SearchInput/>
+        <SearchInput />
       </div>
     </div>
   )
