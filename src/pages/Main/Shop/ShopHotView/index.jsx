@@ -1,7 +1,7 @@
 import React from 'react'
 import { nanoid } from 'nanoid';
 import "./style.less"
-const HomeHotView = (props) => {
+const ShopHotView = (props) => {
   const { data } = props.data
   return (
     <div className="hotproduct">
@@ -24,4 +24,4 @@ const HomeHotView = (props) => {
     </div>
   )
 }
-export default HomeHotView
+export default ShopHotView

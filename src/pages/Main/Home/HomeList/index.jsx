@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import api from '../../../../api'
-import HomeHotView from '../HomeHotView'
-const HomeHotList = (props) => {
+import HomeBar from '../HomeBar'
+const HomeList = (props) => {
   const [hot1List, sethot1List] = useState([])
   const [hot2List, sethot2List] = useState([])
   const [cityName, setCityName]=useState(props.cityName)
@@ -28,10 +28,10 @@ const HomeHotList = (props) => {
   }, [])
   return (
     <div>
-      {hot1List.length>0 ? <HomeHotView data={hot1List} city={cityName} title={"热门商品"}/>:<div>等待数据加载···</div>}
-      {hot2List.length>0 ? <HomeHotView data={hot2List} city={cityName} title={"新品推荐"}/>:<div>等待数据加载···</div>}
+      {hot1List.length>0 ? <HomeBar data={hot1List} city={cityName} title={"热门商品"}/>:<div>等待数据加载···</div>}
+      {hot2List.length>0 ? <HomeBar data={hot2List} city={cityName} title={"新品推荐"}/>:<div>等待数据加载···</div>}
     </div>
   )
 }
 
-export default HomeHotList
+export default HomeList

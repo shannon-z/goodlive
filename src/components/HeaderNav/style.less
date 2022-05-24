@@ -42,52 +42,65 @@
 //     }
 // }
 
-#home-header{
-    background-color:  #ff5555;
+#home-header {
+    background-color: transparent;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
     padding: 10px;
-    *{
-        color: #fff;
-        font-size: 16px;
+
+    * {
+        color: rgba(81, 81, 81, 0.765);
+        font-size: 14px;
         line-height: 1;
         text-decoration: none;
     }
+
     display: flex;
     justify-content: flex-start;
-    .home-header-left{
-        width: 8/10rem;
-        text-align: left;
-        margin: 5px 0;
-        flex: initial;
-    }
+
     .home-header-middle {
         // width: auto;
-        margin: 0 5px 0 5px;
+        margin: 0 5px 0 1px;
         flex: auto;
+        display: flex;
+        background-color: #fff;
+        border-radius: 3px;
+        width: 35/50rem;
+        .home-header-left{
+            width:5/10em;
+            text-align: left;
+            margin: 5px 13px;
+            flex: initial;
+        }
         .search-container {
-            background-color: #fff;
-            border-radius: 5px;
-            overflow: hidden;
+            border-left:  #ccc solid 1px;
             padding: 5px;
+            flex: auto;
             i {
                 color: #ccc !important;
             }
+
             input {
                 font-size: 14px !important;
                 font-weight: normal;
                 border: none;
             }
+        }
     }
-    }
-    .home-header-right{
+
+    .home-header-right {
         width: 15/50rem;
         margin: 5px 0;
         margin-right: 5px;
         text-align: right;
         flex: initial;
-        i{
+
+        i {
             font-size: 18px !important;
         }
     }
-    
+
 
 }
