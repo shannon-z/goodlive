@@ -3,4 +3,8 @@
 }
 .swiper .swiper-view img {
   width: 100%;
+  height: 100%;
+}
+.swiper .headbar {
+  position: absolute;
 }

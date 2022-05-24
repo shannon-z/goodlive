@@ -24,4 +24,4 @@ const CityList = (props) => {
   )
 }
 
-export default withRouter(CityList);
+export default CityList;

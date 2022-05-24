@@ -23,7 +23,6 @@ router.get("/home/hot2", (req, res) => {
     })
 })
 
-
 // 搜索页面
 router.get("/search", (req, res) => {
     const keywords = url.parse(req.url, true).query.search
@@ -52,5 +51,20 @@ router.get("/mock", (req, res) => {
     })
     res.send(data)
 })
-
+router.post("/login",(req,res)=>{
+    const {username,password}=req.body
+    if (username && password){
+        res.send({
+            status:200,
+            token:"enj",
+            nick:username
+        })
+    }
+    else{
+        res.send({
+            status:400,
+            msg:"error"
+        })
+    }
+})
 module.exports = router

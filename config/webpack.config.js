@@ -90,6 +90,7 @@ const hasJsxRuntime = (() => {
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
 module.exports = function (webpackEnv) {
+  
   const isEnvDevelopment = webpackEnv === 'development';
   const isEnvProduction = webpackEnv === 'production';
 
@@ -201,6 +202,9 @@ module.exports = function (webpackEnv) {
     // These are the "entry points" to our application.
     // This means they will be the "root" imports that are included in JS bundle.
     entry: paths.appIndexJs,
+    externals:{
+      'BMap':'BMap'
+    },
     output: {
       // The build folder.
       path: paths.appBuild,
@@ -795,3 +799,4 @@ module.exports = function (webpackEnv) {
     performance: false,
   };
 };
+

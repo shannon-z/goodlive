@@ -5,7 +5,8 @@ const base={
     homehot1:"/api/home/hot1",
     homehot2:"/api/home/hot2",
     searchUrl:"/api/search",
-    details:"/api/details"
+    details:"/api/details",
+    login:"/api/login"
 }
 const api={
     // 获取首页热门产品1
@@ -31,6 +32,11 @@ const api={
     },
     details(params){
         return axios.get(base.baseUrl+base.details,{
+            params
+        })
+    },
+    login(params){
+        return axios.post(base.baseUrl+base.login,{
             params
         })
     }
