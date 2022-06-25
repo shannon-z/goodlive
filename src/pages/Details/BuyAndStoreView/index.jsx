@@ -1,14 +1,38 @@
 import React from 'react'
-
-const BuyAndStoreView = () => {
+import "./style.less"
+import { withRouter } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import * as collectActions from '../../../redux/actions/collect'
+const BuyAndStoreView = (props) => {
+    const dispatch = useDispatch()
+    function storeHandle() {
+        if (props.user.token) {
+            //允许收藏
+            if (isCollected()) {
+                //已经收藏了
+                dispatch(collectActions.removeCollect(props.id))
+            } else {
+                //未收藏
+                dispatch(collectActions.setCollect(props.id))
+            }
+        }
+        else {
+            //请登录
+            props.history.push('/login')
+        }
+    }
+    function isCollected() {
+        let collects = props.collects
+        let id = props.id
+        return collects.some(item => {
+            return item == id
+        })
+    }
     return (
-        <div className="buy-store-container clear-fix">
+        <div className="buy-store-container">
             <div className="item-container float-left">
                 {
-                    // !isCollect ?
-                    //     <button className="selected o" onClick={storeHandle}>已收藏</button>
-                    //     :
-                        <button className="selected">收藏</button>
+                    isCollected()?<button className="selected o" onClick={storeHandle}>已经收藏了</button>:<button className="selected" onClick={storeHandle}>收藏</button>
                 }
             </div>
             <div className="item-container float-right">
@@ -18,4 +42,4 @@ const BuyAndStoreView = () => {
     )
 }
 
-export default BuyAndStoreView
+export default withRouter(BuyAndStoreView) 

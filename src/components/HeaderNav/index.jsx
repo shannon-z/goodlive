@@ -27,7 +27,9 @@ const HeaderNav = (props) => {
                 </div>
             </div>
             <div className="home-header-right">
-                <i className="iconfont icon-car"></i>
+                <Link to="/order">
+                    <i className="iconfont icon-car"></i>
+                </Link>
             </div>
         </div>
 

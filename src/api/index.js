@@ -6,7 +6,10 @@ const base={
     homehot2:"/api/home/hot2",
     searchUrl:"/api/search",
     details:"/api/details",
-    login:"/api/login"
+    comments:"/api/comments",
+    login:"/api/login",
+    order:"/api/order",
+    submitComment:"/api//order/submit/comment",
 }
 const api={
     // 获取首页热门产品1
@@ -35,10 +38,23 @@ const api={
             params
         })
     },
-    login(params){
-        return axios.post(base.baseUrl+base.login,{
+    comments(params){
+        return axios.get(base.baseUrl+base.details,{
             params
         })
+    },
+    login(params){
+        return axios.get(base.baseUrl+base.login,{
+            params
+        })
+    },
+    order(params){
+        return axios.get(base.baseUrl+base.order,{
+            params
+        })
+    },
+    submitComment(params){
+        return axios.post(base.baseUrl+base.submitComment,params)
     }
 }
 

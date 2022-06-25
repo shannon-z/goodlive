@@ -4,7 +4,7 @@ import CityList from './CityList'
 import CurrentCity from './CurrentCity'
 // 较为传统的方式是使用connect将组件和redux连接起来，之后使用export default connect()(City)输出
 // 这里我们使用较新的方式useSelector,useDispatch
-import { useSelector, useDispatch, connect } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { changeCity } from '../../redux/actions/city'
 import BMap from 'BMap'
 import CityLists from './CityLists'
