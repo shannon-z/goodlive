@@ -7,26 +7,22 @@ import banner4 from "../../../assets/images/banner5.png"
 import banner5 from "../../../assets/images/banner6.png"
 import HomeList from './HomeList'
 import BMap from 'BMap'
-import { useSelector, useDispatch, connect } from 'react-redux'
-import { initCITY } from '../../../redux/actions/city'
+import { useSelector, useDispatch } from 'react-redux'
+import { changeCity } from '../../../redux/actions/city'
+
 const Home = () => {
   const city = useSelector(state => state.city)
   const dispatch = useDispatch();
-  var myCity = new BMap.LocalCity();
-  let siteCity = ""
-  myCity.get((res) => {
-    siteCity = res.name;
-  });
-  function initCityToSite(city) {
-    // 分发组装好的action，其中包含type和cityName
-    dispatch(initCITY(city))
-  }
-  var myCity = new BMap.LocalCity();
-  myCity.get(async result => {
-    var cityName = result.name;
-    defaultState.cityName = cityName//这句没生效
-    // console.log(defaultState)
-  });
+  const myCity = new BMap.LocalCity();
+
+  useEffect(()=>{
+    myCity.get((res) => {
+      let cityName=res.name
+      cityName=cityName.substr(0,2)
+      dispatch(changeCity(cityName))
+    });
+  },[])
+
   return (
     <div>
       <Swiper banners={[banner0, banner4, banner5]} cityName={city.cityName} />

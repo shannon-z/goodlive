@@ -8,15 +8,14 @@ const DetailsList = (props) => {
             id: props.id
         }).then(res => {
             if (res.data.status === 200) {
-                console.log(res.data.result)
-                setdetailsData(res.data.result)
+                setdetailsData(res.data.details)
             }
         })
     }, [])
     return (
         <div>
             {detailsData.imgs ?
-                <DetailsView detailsData={detailsData} /> :
+                <DetailsView detailsData={detailsData} id={props.id}/> :
                 <div>等待数据</div>
             }
         </div>

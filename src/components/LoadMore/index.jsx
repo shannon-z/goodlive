@@ -19,7 +19,7 @@ const LoadMore = (props) => {
                         if (winHeight > loadTop) {
                             props.onLoadMore()
                         }
-                    }, 300)
+                    }, 100)
                 }
             }
         }

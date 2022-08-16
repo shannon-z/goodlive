@@ -12,6 +12,8 @@ import Details from '../pages/Details'
 import Login from '../pages/Login'
 import ZhengZuFind from '../pages/Main/Home/ZhengZuFind'
 import GraphFind from '../pages/Main/Home/GraphFind'
+import Order from '../pages/Order'
+
 const AppRouter = () => {
     return (
         <BrowserRouter>
@@ -22,6 +24,7 @@ const AppRouter = () => {
                 <Route path="/search/:keywords" component={Search}></Route>
                 <Route path="/zhengzu" component={ZhengZuFind}></Route>
                 <Route path="/graphfind" component={GraphFind}></Route>
+                <Route path="/order" component={Order}></Route>
                 <Layout>
                     <Switch>
                         <Route exact path="/" component={Home}></Route>

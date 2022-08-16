@@ -2,6 +2,7 @@ const express=require("express")
 const app=express();
 const router=require("./router")
 const cors=require("cors")
+// 用于解析
 const bodyParser=require("body-parser")
 app.use(bodyParser.urlencoded({
     extended:true
